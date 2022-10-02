@@ -41,6 +41,9 @@ def load_user(user_id):
 
 
 ##CONNECT TO DB
+
+# SQLAlchemy needs postgresql:// instead of postgres://
+# But can't change that on Heroku so have to edit it here
 uri = os.getenv("DATABASE_URL")
 if uri.startswith("postgres://"):
     uri = uri.replace("postgres://", "postgresql://", 1)
